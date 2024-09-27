@@ -1,7 +1,6 @@
 package cl.ucn.main;
 
-import cl.ucn.modelo.DatabaseProxy;
-import cl.ucn.modelo.Usuario;
+
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -11,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
        
-        Proxy databaseProxy = new DatabaseProxy();
+        proxy databaseProxy = new DatabaseProxy();
         databaseProxy.SelectQuery();
 
         // Parte 2
@@ -25,7 +24,7 @@ public class Main {
         */
         }
 
-        em.close();
+        
 
     }
-}
+
