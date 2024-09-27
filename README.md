@@ -34,7 +34,7 @@ los permisos o no, de acuerdo al archivo asignado por defecto.
 <hr>
 
 ## Explicación
-(Escriba aquí su explicación)
+Se hizo uso del Patron de Diseño proxy para la tarea dada
 
 
 <hr>
