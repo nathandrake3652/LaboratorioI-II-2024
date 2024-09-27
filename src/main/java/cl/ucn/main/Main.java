@@ -1,9 +1,8 @@
 package cl.ucn.main;
 
 
-import jakarta.persistence.*;
-
-import java.util.List;
+import cl.ucn.Interfaz.proxy;
+import cl.ucn.modelo.DatabaseProxy;
 
 public class Main {
 
@@ -27,4 +26,3 @@ public class Main {
         
 
     }
-

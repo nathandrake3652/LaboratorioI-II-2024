@@ -2,24 +2,33 @@ package cl.ucn.modelo;
 
 import java.util.List;
 
+import cl.ucn.Interfaz.proxy;
 import cl.ucn.util.Util;
  
 public class DatabaseProxy implements proxy {
     private Databaseconec databaseconec;
     private Util util;
 
- public void SelectQuery(){
+
+   public DatabaseProxy() {
+        this.databaseconec = new Databaseconec(89830291, "SELECT u from Usuario u WHERE u.rut = :rut");
+        this.util = new Util();  
+    }
+    @Override
+ public String SelectQuery(){
     if(databaseconec.SelectQuery() == null){
-        String comparar = databaseconec.getData();
+        int comparar = databaseconec.getData();
         List<Usuario> usuarios = util.loadCsv();
         for (Usuario usuario : usuarios){
-           if (comparar.equals(usuario.getRut())) {
-              System.out.println("Rut: " + usuario.getRut() + " Permiso: " + usuario.isTienePermiso() + " Archivo: " +
-                    usuario.getRecursosMultimedia().getNombre() + " Protegido: " + usuario.getRecursosMultimedia().isProtegido());
+           if (comparar == usuario.getRut()) {
+              System.out.println("El usuario: " + usuario.getRut() + " existe en el csv" );
+                    return usuario.getNombre();
            }
         }
         }else{ databaseconec.SelectQuery();
             
  }
+         return null;
 }
 }
+
